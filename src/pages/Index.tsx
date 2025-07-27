@@ -1,13 +1,30 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React, { useState } from 'react';
+import { VoterLogin } from '@/components/VoterLogin';
+import { VoterRegistration } from '@/components/VoterRegistration';
+import { VotingInterface } from '@/components/VotingInterface';
+import { AdminDashboard } from '@/components/AdminDashboard';
+import { useVoting } from '@/contexts/VotingContext';
 
 const Index = () => {
+  const [currentView, setCurrentView] = useState<'login' | 'register'>('login');
+  const { currentUser } = useVoting();
+
+  // Show appropriate interface based on user state
+  if (currentUser) {
+    if (currentUser.role === 'admin') {
+      return <AdminDashboard />;
+    } else {
+      return <VotingInterface />;
+    }
+  }
+
+  // Show login or registration based on current view
+  if (currentView === 'register') {
+    return <VoterRegistration />;
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <VoterLogin onRegisterClick={() => setCurrentView('register')} />
   );
 };
 

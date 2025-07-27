@@ -8,33 +8,58 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 210 100% 99%;
+    --foreground: 220 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 235 70% 25%;
+    --primary-foreground: 210 100% 98%;
+    --primary-glow: 235 85% 45%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 220 15% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 10% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 142 80% 25%;
+    --accent-foreground: 210 100% 98%;
+    --accent-glow: 142 85% 35%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 100% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --success: 142 70% 25%;
+    --success-foreground: 210 100% 98%;
+
+    --warning: 45 90% 50%;
+    --warning-foreground: 220 15% 15%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 235 70% 25%;
+
+    /* Voting System Specific Colors */
+    --vote-secure: 235 70% 25%;
+    --vote-verified: 142 70% 25%;
+    --vote-pending: 45 90% 50%;
+    --vote-blockchain: 260 70% 30%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --gradient-blockchain: linear-gradient(135deg, hsl(var(--vote-blockchain)), hsl(260 85% 45%));
+    --gradient-secure: linear-gradient(180deg, hsl(var(--background)), hsl(210 30% 98%));
+
+    /* Shadows */
+    --shadow-secure: 0 20px 40px -12px hsl(var(--primary) / 0.25);
+    --shadow-card: 0 4px 16px -4px hsl(var(--foreground) / 0.1);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
 
     --radius: 0.5rem;
 
